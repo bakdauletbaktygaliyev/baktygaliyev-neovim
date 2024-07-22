@@ -7,6 +7,7 @@ vim.g.maplocalleader = " "
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+vim.cmd.termguicolors = true
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -60,7 +61,13 @@ vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
+vim.opt.guicursor = "" --highlight current search
+vim.opt.hlsearch = true
 
+--show search while typing it
+vim.opt.incsearch = true
+
+vim.cmd("set ve+=onemore")
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
