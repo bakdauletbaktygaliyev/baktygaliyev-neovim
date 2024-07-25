@@ -67,7 +67,7 @@ vim.opt.hlsearch = true
 --show search while typing it
 vim.opt.incsearch = true
 
-vim.cmd("set ve+=onemore")
+-- vim.cmd("set ve+=onemore")
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
