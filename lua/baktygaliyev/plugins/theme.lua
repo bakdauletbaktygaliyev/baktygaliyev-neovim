@@ -1,13 +1,13 @@
--- return {
--- 	"rose-pine/neovim",
--- 	name = "rose-pine",
--- 	config = function()
--- 		vim.cmd.colorscheme("rose-pine")
--- 		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- 		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
--- 		vim.cmd.hi("Comment gui = none")
--- 	end,
--- }
+return {
+	"rose-pine/neovim",
+	name = "rose-pine",
+	config = function()
+		vim.cmd.colorscheme("rose-pine")
+		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		vim.cmd.hi("Comment gui = none")
+	end,
+}
 --
 -- return {
 -- 	"bluz71/vim-moonfly-colors",
@@ -79,20 +79,20 @@
 -- 	end,
 -- }
 --
-return {
-	"vague2k/vague.nvim",
-	config = function()
-		require("vague").setup({
-			transparent = false, -- don't set background
-			style = {
-				comments = "italic",
-				-- headings = "bold", -- markdown headings
-				strings = "italic",
-			},
-		})
-		vim.cmd.colorscheme("vague")
-	end,
-}
+-- return {
+-- 	"vague2k/vague.nvim",
+-- 	config = function()
+-- 		require("vague").setup({
+-- 			transparent = false, -- don't set background
+-- 			style = {
+-- 				comments = "italic",
+-- 				-- headings = "bold", -- markdown headings
+-- 				strings = "italic",
+-- 			},
+-- 		})
+-- 		vim.cmd.colorscheme("vague")
+-- 	end,
+-- }
 --
 -- return {
 -- 	"gmr458/vscode_modern_theme.nvim",
