@@ -1,13 +1,13 @@
-return {
-	"rose-pine/neovim",
-	name = "rose-pine",
-	config = function()
-		vim.cmd.colorscheme("rose-pine")
-		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-		vim.cmd.hi("Comment gui = none")
-	end,
-}
+-- return {
+-- 	"rose-pine/neovim",
+-- 	name = "rose-pine",
+-- 	config = function()
+-- 		vim.cmd.colorscheme("rose-pine")
+-- 		-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- 		-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- 		vim.cmd.hi("Comment gui = none")
+-- 	end,
+-- }
 --
 -- return {
 -- 	"bluz71/vim-moonfly-colors",
@@ -79,17 +79,93 @@ return {
 -- 	end,
 -- }
 --
+return {
+	"vague2k/vague.nvim",
+	config = function()
+		require("vague").setup({
+			transparent = false, -- don't set background
+			style = {
+				comments = "italic",
+				-- headings = "bold", -- markdown headings
+				strings = "italic",
+			},
+		})
+		vim.cmd.colorscheme("vague")
+	end,
+}
+--
 -- return {
--- 	"vague2k/vague.nvim",
+-- 	"gmr458/vscode_modern_theme.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
 -- 	config = function()
--- 		require("vague").setup({
--- 			transparent = false, -- don't set background
--- 			style = {
--- 				comments = "italic",
--- 				headings = "bold", -- markdown headings
--- 				strings = "italic",
+-- 		require("vscode_modern").setup({})
+-- 		vim.cmd.colorscheme("vscode_modern")
+-- 	end,
+-- }
+--
+-- return {
+-- 	"loctvl842/monokai-pro.nvim",
+-- 	config = function()
+-- 		require("monokai-pro").setup({
+-- 			devicons = true, -- highlight the icons of `nvim-web-devicons`
+-- 			styles = {
+-- 				comment = { italic = true },
+-- 				keyword = { italic = false }, -- any other keyword
+-- 				type = { italic = false }, -- (preferred) int, long, char, etc
+-- 				storageclass = { italic = false }, -- static, register, volatile, etc
+-- 				structure = { italic = false }, -- struct, union, enum, etc
+-- 				parameter = { italic = false }, -- parameter pass in function
+-- 				annotation = { italic = true },
+-- 				tag_attribute = { italic = false }, -- attribute of tag in reactjs
+-- 			},
+-- 			filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
+-- 		})
+-- 		vim.cmd.colorscheme("monokai-pro")
+-- 	end,
+-- }
+--
+-- return {
+-- 	"Yazeed1s/oh-lucy.nvim",
+-- 	config = function()
+-- 		vim.cmd.colorscheme("oh-lucy-evening")
+-- 	end,
+-- }
+
+-- return {
+-- 	"catppuccin/nvim",
+-- 	name = "catppuccin",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		require("catppuccin").setup({
+-- 			flavour = "mocha", -- latte, frappe, macchiato, mocha
+-- 			dim_inactive = {
+-- 				enabled = true, -- dims the background color of inactive window
+-- 				shade = "dark",
+-- 				percentage = 0.15, -- percentage of the shade to apply to the inactive window
+-- 			},
+-- 			styles = {
+-- 				comments = { "italic" },
+-- 				conditionals = {},
+-- 			},
+-- 			integrations = {
+-- 				cmp = true,
+-- 				gitsigns = true,
+-- 				nvimtree = true,
+-- 				treesitter = true,
 -- 			},
 -- 		})
--- 		vim.cmd.colorscheme("vague")
+--
+-- 		vim.cmd.colorscheme("catppuccin")
+-- 	end,
+-- }
+--
+-- return {
+-- 	"folke/tokyonight.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	opts = {},
+-- 	config = function()
+-- 		vim.cmd.colorscheme("tokyonight-night")
 -- 	end,
 -- }
