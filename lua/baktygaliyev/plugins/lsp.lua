@@ -125,12 +125,22 @@ return {
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
-				"lua_ls",
-				"rust_analyzer",
-				"tsserver",
-				"gopls",
-				"clangd",
-				"jdtls",
+				"pyright", -- Python
+				"rust_analyzer", -- Rust
+				"tsserver", -- TypeScript and JavaScript
+				"gopls", -- Go
+				"lua_ls", -- Lua
+				"html", -- HTML
+				"cssls", -- CSS, SCSS
+				"jdtls", -- Java
+				"svelte", -- Svelte
+				"tailwindcss", -- Tailwind CSS
+				-- "solargraph",    -- Ruby (if needed)
+				"clangd", -- C/C++
+				"emmet_ls", -- Emmet (for HTML/CSS)
+				"jsonls", -- JSON
+				"yamlls", -- YAML
+				"bashls", -- Bash
 			},
 			handlers = {
 				function(server_name) -- default handler (optional)
@@ -169,12 +179,13 @@ return {
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
-			sources = cmp.config.sources({
+			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" }, -- For luasnip users.
-			}, {
+				{ name = "luasnip" },
 				{ name = "buffer" },
-			}),
+				{ name = "path" },
+				{ name = "cmdline" },
+			},
 		})
 
 		vim.diagnostic.config({
@@ -183,8 +194,16 @@ return {
 				focusable = false,
 				style = "minimal",
 				border = "rounded",
-				header = "",
-				prefix = "",
+				header = "Diagnostics",
+				prefix = ">>",
+			},
+			virtual_text = {
+				prefix = "▎", -- Stylish character for virtual text (could be '■', '▎', etc.)
+				spacing = 2, -- Space between the prefix and the message
+				source = "always", -- Show source of diagnostics (e.g., "LSP")
+				severity = {
+					min = vim.diagnostic.severity.WARN, -- Only show warnings and errors
+				},
 			},
 		})
 	end,
