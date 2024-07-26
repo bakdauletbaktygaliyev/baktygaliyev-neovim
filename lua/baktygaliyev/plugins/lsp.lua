@@ -173,6 +173,10 @@ return {
 					require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
 				end,
 			},
+			window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
+			},
 			mapping = cmp.mapping.preset.insert({
 				["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<Tab>"] = cmp.mapping.select_next_item(cmp_select),
